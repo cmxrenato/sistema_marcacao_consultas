@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marcação de Consultas</title>
+  <title>Login</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+   <link rel="stylesheet" type="text/css" href="css/login.css" />
 </head>
 <body>
 
@@ -26,7 +27,7 @@
       </button>
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
           <li class="nav-item"><a class="nav-link" href="login.php">Login para profissionais</a></li>
@@ -45,46 +46,22 @@
       <div class="col-md-4">
         <div class="bg-light p-3 rounded shadow">
          
-  <h4>Agenda de Consultas</h4>
-  <form method="POST" action="marcar.php">
-  <div class="mb-3">
-    <label for="nome" class="form-label">Nome do Paciente</label>
-    <input type="text" name="nome" id="nome" class="form-control" required>
-  </div>
-
-  <div class="mb-3">
-    <label for="data" class="form-label">Data</label>
-    <select name="data" id="data" class="form-select" required onchange="this.form.submit()">
-      <option value="">Selecione a data</option>
-      <?php foreach ($diasUteis as $d): ?>
-        <option value="<?= $d ?>" <?= (isset($_POST['data']) && $_POST['data'] == $d) ? 'selected' : '' ?>>
-          <?= date('d/m/Y', strtotime($d)) ?>
-        </option>
-      <?php endforeach; ?>
-    </select>
-  </div>
-
-  <?php if (!empty($_POST['data'])): ?>
-    <div class="mb-3">
-      <label for="hora" class="form-label">Horário</label>
-      <select name="hora" id="hora" class="form-select" required>
-        <?php
-          $horarios = gerarHorariosDisponiveis($_POST['data'], $pdo);
-          foreach ($horarios as $h) {
-            echo "<option value=\"$h\">" . date('H:i', strtotime($h)) . "</option>";
-          }
-          if (empty($horarios)) {
-            echo "<option disabled>Todos os horários estão ocupados</option>";
-          }
-        ?>
-      </select>
+   <div class="login-container bg-light">
+    <div class="login-box bg-white p-4 rounded shadow">
+      <h3 class="text-center mb-4">Login do Profissional</h3>
+      <form action="loginBack.php" method="POST">
+        <div class="mb-3">
+          <label for="login" class="form-label">Usuário</label>
+          <input type="text" name="login" id="login" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" name="senha" id="senha" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+      </form>
     </div>
-  <?php endif; ?>
-
-  <?php if (!empty($_POST['data']) && !empty($horarios)): ?>
-    <button type="submit" class="btn btn-success w-100">Confirmar Agendamento</button>
-  <?php endif; ?>
-</form>
+  </div>
 </div>
 
         </div>

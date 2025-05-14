@@ -1,0 +1,13 @@
+main{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+
+}
+
+#btn-confirmar{
+    margin-top: 60px;
+    width: 300px;
+   
+}

@@ -8,6 +8,8 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/sistema.css" />
+  <script src="js/diasDisponiveis.js" defer></script>
 </head>
 <body>
 
@@ -37,60 +39,18 @@
 
   <!-- Conteúdo principal -->
   <main class="container my-5">
-    <div class="row">
-      <div class="col-md-8">
-        <h2>Bem-vindo!</h2>
-        <p>Este é um exemplo de página para marcação de consultas.</p>
-      </div>
-      <div class="col-md-4">
-        <div class="bg-light p-3 rounded shadow">
-         
-  <h4>Agenda de Consultas</h4>
-  <form method="POST" action="marcar.php">
-  <div class="mb-3">
-    <label for="nome" class="form-label">Nome do Paciente</label>
-    <input type="text" name="nome" id="nome" class="form-control" required>
+  <h2 class="mb-4">Escolha os dias e horários disponíveis</h2>
+
+  <!-- Dias da semana -->
+  <div id="dias-semana">
+    <!-- Dias serão inseridos aqui via JS -->
+     
   </div>
-
-  <div class="mb-3">
-    <label for="data" class="form-label">Data</label>
-    <select name="data" id="data" class="form-select" required onchange="this.form.submit()">
-      <option value="">Selecione a data</option>
-      <?php foreach ($diasUteis as $d): ?>
-        <option value="<?= $d ?>" <?= (isset($_POST['data']) && $_POST['data'] == $d) ? 'selected' : '' ?>>
-          <?= date('d/m/Y', strtotime($d)) ?>
-        </option>
-      <?php endforeach; ?>
-    </select>
+   <div><button class="btn btn-success" id="btn-confirmar">Confirmar Seleção</button></div>
   </div>
+</main>
+<?php include 'listar_consultas.php'; ?>
 
-  <?php if (!empty($_POST['data'])): ?>
-    <div class="mb-3">
-      <label for="hora" class="form-label">Horário</label>
-      <select name="hora" id="hora" class="form-select" required>
-        <?php
-          $horarios = gerarHorariosDisponiveis($_POST['data'], $pdo);
-          foreach ($horarios as $h) {
-            echo "<option value=\"$h\">" . date('H:i', strtotime($h)) . "</option>";
-          }
-          if (empty($horarios)) {
-            echo "<option disabled>Todos os horários estão ocupados</option>";
-          }
-        ?>
-      </select>
-    </div>
-  <?php endif; ?>
-
-  <?php if (!empty($_POST['data']) && !empty($horarios)): ?>
-    <button type="submit" class="btn btn-success w-100">Confirmar Agendamento</button>
-  <?php endif; ?>
-</form>
-</div>
-
-        </div>
-      </div>
-    </div>
-  </main>
 
   <!-- Rodapé -->
   <footer class="bg-secondary text-white text-center p-3">

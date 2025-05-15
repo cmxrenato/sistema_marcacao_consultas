@@ -7,7 +7,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="css/style.css?v=<?= filemtime('css/style.css') ?>" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -37,54 +37,48 @@
 
   <!-- Conteúdo principal -->
   <main class="container my-5">
-    <div class="row">
+    <div class="row" >
       <div class="col-md-8">
         <h2>Bem-vindo!</h2>
         <p>Este é um exemplo de página para marcação de consultas.</p>
       </div>
-      <div class="col-md-4">
-        <div class="bg-light p-3 rounded shadow">
+ <div class="col-md-4" >
+<div class="bg-light p-3 rounded shadow" id="formulario" >
          
   <h4>Agenda de Consultas</h4>
-  <form method="POST" action="marcar.php">
-  <div class="mb-3">
-    <label for="nome" class="form-label">Nome do Paciente</label>
-    <input type="text" name="nome" id="nome" class="form-control" required>
-  </div>
+  
+    <form action="processar_agendamento.php" method="POST" class="needs-validation" novalidate>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nome" class="form-label">Nome do Paciente</label>
+          <input type="text" class="form-control" id="nome" name="nome" required>
+          <div class="invalid-feedback">Informe o nome do paciente.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" class="form-control" id="telefone" name="telefone" required>
+          <div class="invalid-feedback">Informe um telefone válido.</div>
+        </div>
+      </div>
 
-  <div class="mb-3">
-    <label for="data" class="form-label">Data</label>
-    <select name="data" id="data" class="form-select" required onchange="this.form.submit()">
-      <option value="">Selecione a data</option>
-      <?php foreach ($diasUteis as $d): ?>
-        <option value="<?= $d ?>" <?= (isset($_POST['data']) && $_POST['data'] == $d) ? 'selected' : '' ?>>
-          <?= date('d/m/Y', strtotime($d)) ?>
-        </option>
-      <?php endforeach; ?>
-    </select>
-  </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="data" class="form-label">Data da Consulta</label>
+          <input type="date" class="form-control" id="data" name="data" required>
+          <div class="invalid-feedback">Escolha uma data.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="horario" class="form-label">Horário</label>
+          <input type="time" class="form-control" id="horario" name="horario" required>
+          <div class="invalid-feedback">Escolha um horário.</div>
+        </div>
+      </div>
 
-  <?php if (!empty($_POST['data'])): ?>
-    <div class="mb-3">
-      <label for="hora" class="form-label">Horário</label>
-      <select name="hora" id="hora" class="form-select" required>
-        <?php
-          $horarios = gerarHorariosDisponiveis($_POST['data'], $pdo);
-          foreach ($horarios as $h) {
-            echo "<option value=\"$h\">" . date('H:i', strtotime($h)) . "</option>";
-          }
-          if (empty($horarios)) {
-            echo "<option disabled>Todos os horários estão ocupados</option>";
-          }
-        ?>
-      </select>
-    </div>
-  <?php endif; ?>
-
-  <?php if (!empty($_POST['data']) && !empty($horarios)): ?>
-    <button type="submit" class="btn btn-success w-100">Confirmar Agendamento</button>
-  <?php endif; ?>
-</form>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Agendar Consulta</button>
+      </div>
+    </form>
+ 
 </div>
 
         </div>

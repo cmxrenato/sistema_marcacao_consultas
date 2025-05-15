@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="css/sistema.css" />
-  <script src="js/diasDisponiveis.js" defer></script>
+  <script src="js/diasDisponiveis.js?v=1.0.6" defer></script>
 </head>
 <body>
 

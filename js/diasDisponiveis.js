@@ -8,7 +8,7 @@
   ];
 
   const horarios = [];
-  for (let hora = 9; hora <= 20; hora++) {
+  for (let hora = 7; hora <= 20; hora++) {
     let hStr = hora < 10 ? `0${hora}:00` : `${hora}:00`;
     horarios.push(hStr);
   }
@@ -44,6 +44,7 @@
       divHora.className = 'form-check';
 
       const inputHora = document.createElement('input');
+      inputHora.setAttribute('data-horario', horario);
       inputHora.type = 'checkbox';
       inputHora.className = 'form-check-input';
       inputHora.id = `${dia.id}-${horario.replace(':', '')}`;
@@ -75,7 +76,7 @@
     });
   });
 
-  document.getElementById('btn-confirmar').addEventListener('click', function() {
+document.getElementById('btn-confirmar').addEventListener('click', function() {
   let selecoes = [];
 
   dias.forEach(dia => {
@@ -92,24 +93,23 @@
     alert("Nenhum horário foi selecionado.");
     return;
   }
-
-  // Envia para o PHP via fetch
+   // Enviar para o backend com fetch
   fetch('salvar_selecoes.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ selecoes })
+    body: JSON.stringify(selecoes)
   })
-  .then(res => res.json())
+  .then(response => response.text())
   .then(data => {
-    if (data.status === "ok") {
-      alert("Seleções salvas com sucesso!");
-    } else {
-      alert("Erro ao salvar: " + data.mensagem);
-    }
+    alert("Disponibilidade salva com sucesso!");
+    console.log(data);
   })
-  .catch(err => {
-    alert("Erro na requisição: " + err);
+  .catch(error => {
+    console.error("Erro ao salvar:", error);
+    alert("Erro ao salvar disponibilidade.");
   });
+
+
 });

@@ -44,10 +44,10 @@
         <p>Este é um exemplo de página para marcação de consultas.</p>
       </div>
       <div class="col-md-4">
-        <div class="bg-light p-3 rounded shadow">
+        <div class="bg-light p-4 rounded shadow">
          
-   <div class="login-container bg-light">
-    <div class="login-box bg-white p-4 rounded shadow">
+   
+    
       <h3 class="text-center mb-4">Login do Profissional</h3>
       <form action="loginBack.php" method="POST">
         <div class="mb-3">
@@ -58,7 +58,7 @@
           <label for="senha" class="form-label">Senha</label>
           <input type="password" name="senha" id="senha" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        <button type="submit" class="btn btn-success w-100">Entrar</button>
       </form>
     </div>
   </div>

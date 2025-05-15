@@ -13,9 +13,8 @@ main.container div.row div.col-md-4 div#formulario{
   flex-direction:column;
   justify-content: center;
   align-items: center;
+ 
 }
 
-input{
-    width: 300px;
-}
+
   

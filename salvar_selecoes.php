@@ -1,5 +1,5 @@
 <?php
-// salvar_disponibilidade.php
+// salvar_disponibilidade
 header('Content-Type: application/json');
 
 // Conexão com o banco

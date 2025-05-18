@@ -46,10 +46,18 @@
     <!-- Dias serão inseridos aqui via JS -->
      
   </div>
-   <div><button class="btn btn-success" id="btn-confirmar">Confirmar Seleção</button></div>
+   <div id="botao-div"><button class="btn btn-success" id="btn-confirmar">Confirmar Seleção</button></div>
+  
+
+  <div>
+    <h2 id="agenda-label">Agenda disponível</h2>
+    <?php include 'listar_disponibilidades.php'; ?>
   </div>
+
+
+
 </main>
-<?php include 'listar_consultas.php'; ?>
+
 
 
   <!-- Rodapé -->

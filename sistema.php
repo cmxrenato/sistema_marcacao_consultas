@@ -7,12 +7,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 ?>
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -51,6 +45,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
       </div>
     </div>
   </nav>
+  <div class="submenu"><div id="nome"><p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p></div>
+<div><a href="logout.php" class="botao-sair" onclick="return confirmarSaida()">🔒 Sair</a></div>
+
+
+</div>
 
   <!-- Conteúdo principal -->
   <main class="container my-5">

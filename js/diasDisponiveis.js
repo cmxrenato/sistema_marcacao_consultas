@@ -99,8 +99,10 @@ document.getElementById('btn-confirmar').addEventListener('click', function() {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(selecoes)
+    body: JSON.stringify(selecoes) //convertendo para uma string json
   })
+
+  //Bloco que recebe do PHP a resposta se tudo deu certo.
   .then(response => response.text())
   .then(data => {
     alert("Disponibilidade salva com sucesso!");

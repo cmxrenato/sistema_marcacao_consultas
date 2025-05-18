@@ -4,6 +4,7 @@ header('Content-Type: application/json');
 
 // Conexão com o banco
 include 'conexao.php';
+
 if ($conexao->connect_error) {
   http_response_code(500);
   echo json_encode(["erro" => "Erro de conexão com o banco"]);
@@ -29,5 +30,6 @@ foreach ($dados as $item) {
 $stmt->close();
 $conexao->close();
 
+//Envia para o Front-End uma resposta para ser exibida
 echo json_encode(["status" => "ok"]);
 ?>

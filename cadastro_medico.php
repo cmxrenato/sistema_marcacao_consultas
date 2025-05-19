@@ -3,9 +3,9 @@
 include 'conexao.php'; // Inclui o arquivo de conexão com o banco de dados
 
 // Recebe os dados do formulário (ou definidos diretamente)
-$login = "renato@email.com";
-$senha = "123456";
-$nome  = "Renato";
+$login = "joao@email.com";
+$senha = "654321";
+$nome  = "João";
 
 // Cria o hash seguro da senha
 $senha_hash = password_hash($senha, PASSWORD_DEFAULT);

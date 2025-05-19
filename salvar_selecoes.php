@@ -1,10 +1,20 @@
 <?php
-// salvar_disponibilidade
-header('Content-Type: application/json');
+// salvar_disponibilidade.php
+session_start(); // necessário para acessar $_SESSION
 
-// Conexão com o banco
+header('Content-Type: application/json');
 include 'conexao.php';
 
+// Verifica se o médico está logado
+if (!isset($_SESSION['medico_id'])) {
+  http_response_code(403);
+  echo json_encode(["erro" => "Médico não logado"]);
+  exit;
+}
+
+$medico_id = $_SESSION['medico_id'];
+
+// Verifica conexão
 if ($conexao->connect_error) {
   http_response_code(500);
   echo json_encode(["erro" => "Erro de conexão com o banco"]);
@@ -20,16 +30,15 @@ if (!is_array($dados)) {
   exit;
 }
 
-$stmt = $conexao->prepare("INSERT INTO selecoes_consultas (dia, horario) VALUES (?, ?)");
+$stmt = $conexao->prepare("INSERT INTO selecoes_consultas (dia, horario, medico_id) VALUES (?, ?, ?)");
 
 foreach ($dados as $item) {
-  $stmt->bind_param("ss", $item['dia'], $item['horario']);
+  $stmt->bind_param("ssi", $item['dia'], $item['horario'], $medico_id);
   $stmt->execute();
 }
 
 $stmt->close();
 $conexao->close();
 
-//Envia para o Front-End uma resposta para ser exibida
 echo json_encode(["status" => "ok"]);
 ?>

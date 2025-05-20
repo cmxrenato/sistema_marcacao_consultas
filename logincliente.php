@@ -8,7 +8,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login</title>
+  <title>Login Cliente</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,8 @@ session_start();
           <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.php">Login para profissionais</a></li>
+          <li class="nav-item"><a class="nav-link" href="loginprofissional.php">Login para profissionais</a></li>
+          <li class="nav-item"><a class="nav-link" href="logincliente.php">Login para Clientes</a></li>
         </ul>
       </div>
     </div>
@@ -53,7 +54,7 @@ session_start();
          
    
     
-      <h3 class="text-center mb-4">Login do Profissional</h3>
+      <h3 class="text-center mb-4">Login do Cliente</h3>
       <form action="tratamento_login_profissional.php" method="POST" id="form-login">
         <div class="mb-3">
           <label for="login" class="form-label">Usuário</label>

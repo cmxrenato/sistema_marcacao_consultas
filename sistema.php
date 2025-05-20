@@ -18,7 +18,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="css/sistema.css" />
-  <script src="js/diasDisponiveis.js?v=1.0.6" defer></script>
+  <script src="js/diasDisponiveis.js?v=1.0.7" defer></script>
 </head>
 <body>
 
@@ -46,7 +46,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
   </nav>
   <div class="submenu"><div id="nome"><p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p></div>
-<div><a href="logout.php" class="botao-sair" onclick="return confirmarSaida()">🔒 Sair</a></div>
+<div><a href="logout.php" class="btn btn-danger" onclick="return confirmarSaida()">🔒 Sair</a></div>
 
 
 </div>

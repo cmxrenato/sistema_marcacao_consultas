@@ -19,4 +19,14 @@ main{
 #agenda-label{
     margin-bottom: 20px;
 }
-
+.submenu{
+    
+    display: flex;
+    justify-content: end;
+    
+}
+#nome{
+    padding-right: 20px;
+    font-weight: 800;
+    font-size: larger;
+}

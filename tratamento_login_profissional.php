@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedin'] = true;
             $_SESSION['id'] = $id;
             $_SESSION['nome'] = $nome;
-            $_SESSION['medico_id'] = $id; // <-- Aqui corrigido
+            $_SESSION['medico_id'] = $id; 
 
             header("Location: sistema.php");
             exit;

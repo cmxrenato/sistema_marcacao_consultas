@@ -18,3 +18,9 @@
       max-width: 400px;
       width: 100%;
     }
+    .link-cadastro .mb-3{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      
+    }

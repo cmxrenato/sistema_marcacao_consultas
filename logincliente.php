@@ -13,7 +13,7 @@ session_start();
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-   <link rel="stylesheet" type="text/css" href="css/login.css" />
+   <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -64,7 +64,17 @@ session_start();
           <label for="senha" class="form-label">Senha</label>
           <input type="password" name="senha" id="senha" class="form-control" required>
         </div>
+       
         <button type="submit" class="btn btn-success w-100">Entrar</button>
+        <div class="link-cadastro">
+
+            <div class="mb-3">
+            <a href="redefinirsenha.php">Redefina sua senha</a>
+            </div>
+            <div class="mb-3">
+            <a href="cadastrocliente.php">É novo por aqui? Então cadastre-se!</a>
+            </div>
+        </div>
       </form>
     </div>
   </div>

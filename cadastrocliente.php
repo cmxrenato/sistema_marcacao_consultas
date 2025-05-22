@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
-  <script src="js/cadastro.js?v=1.0.3" defer></script>
+  <script src="js/cadastro.js?v=1.0.5" defer></script>
 </head>
 <body>
 
@@ -57,15 +57,20 @@ session_start();
             </div> 
             <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
+              <div class="toggle1">
               <input type="password" name="senha" id="senha" class="form-control" required placeholder="Crie uma senha">
               <p id="senha-helper" class="helper-text">Mensagem de ajuda</p>
               <span class="toggle-password-btn" onclick="togglePassword(this, 'senha')">👁️‍🗨️</span>
+              </div>
             </div>
             <div class="mb-3">
-              <label for="confirmesenha" class="form-label">Confirme a senha</label>
-              <input type="password" name="confirmesenha" id="confirmesenha" class="form-control" required placeholder="Confirme a senha">
-              <p id="confirma-senha-helper" class="helper-text">Mensagem de ajuda</p>
+              <label for="confirma-senha" class="form-label">Confirme a senha</label>
+              <div class="toggle1">
+              <input type="password" name="confirmesenha" id="confirma-senha" class="form-control" required placeholder="Confirme a senha">
               <span class="toggle-password-btn" onclick="togglePassword(this, 'confirma-senha')">👁️‍🗨️</span>
+                       
+              </div>
+              <p id="confirma-senha-helper" class="helper-text">Mensagem de ajuda</p>
             </div>             
             <button type="submit" class="btn btn-success w-100">Cadastrar</button>
           </form>

@@ -13,6 +13,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
+  <script src="js/cadastro.js?v=1.0.3" defer></script>
 </head>
 <body>
 
@@ -47,18 +48,24 @@ session_start();
             <div class="mb-3">
               <label for="nome" class="form-label">Nome</label>
               <input type="text" name="nome" id="nome" class="form-control" required>
+              <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="text" name="email" id="email" class="form-control" required>
+              <p id="email-helper" class="helper-text">Mensagem de ajuda</p>
             </div> 
             <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
-              <input type="password" name="senha" id="senha" class="form-control" required>
+              <input type="password" name="senha" id="senha" class="form-control" required placeholder="Crie uma senha">
+              <p id="senha-helper" class="helper-text">Mensagem de ajuda</p>
+              <span class="toggle-password-btn" onclick="togglePassword(this, 'senha')">👁️‍🗨️</span>
             </div>
             <div class="mb-3">
               <label for="confirmesenha" class="form-label">Confirme a senha</label>
-              <input type="password" name="confirmesenha" id="confirmesenha" class="form-control" required>
+              <input type="password" name="confirmesenha" id="confirmesenha" class="form-control" required placeholder="Confirme a senha">
+              <p id="confirma-senha-helper" class="helper-text">Mensagem de ajuda</p>
+              <span class="toggle-password-btn" onclick="togglePassword(this, 'confirma-senha')">👁️‍🗨️</span>
             </div>             
             <button type="submit" class="btn btn-success w-100">Cadastrar</button>
           </form>

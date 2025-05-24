@@ -29,8 +29,8 @@
           <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.php">Login para Profissionais</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.php">Login para Clientes</a></li>
+          <li class="nav-item"><a class="nav-link" href="loginprofissional.php">Login para profissionais</a></li>
+          <li class="nav-item"><a class="nav-link" href="logincliente.php">Login para Clientes</a></li>
         </ul>
       </div>
     </div>
@@ -43,48 +43,7 @@
         <h2>Bem-vindo!</h2>
         <p>Este é um exemplo de página para marcação de consultas.</p>
       </div>
- <div class="col-md-4" >
-<div class="bg-light p-4 rounded shadow" id="formulario" >
-         
-  <h4>Agenda de Consultas</h4>
-  
-    <form action="processar_agendamento.php" method="POST" class="needs-validation" novalidate>
-      <div class="row mb-3">
-        <div class="">
-          <label for="nome" class="form-label">Nome do Paciente</label>
-          <input type="text" class="form-control" id="nome" name="nome" required>
-          <div class="invalid-feedback">Informe o nome do paciente.</div>
-        </div>
-        <div class="">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input type="tel" class="form-control" id="telefone" name="telefone" required>
-          <div class="invalid-feedback">Informe um telefone válido.</div>
-        </div>
-      </div>
 
-      <div class="row mb-3">
-        <div class="">
-          <label for="data" class="form-label">Data da Consulta</label>
-          <input type="date" class="form-control" id="data" name="data" required>
-          <div class="invalid-feedback">Escolha uma data.</div>
-        </div>
-        <div class="">
-          <label for="horario" class="form-label">Horário</label>
-          <input type="time" class="form-control" id="horario" name="horario" required>
-          <div class="invalid-feedback">Escolha um horário.</div>
-        </div>
-      </div>
-
-      <div class="d-grid">
-        <button type="submit" class="btn btn-success">Agendar Consulta</button>
-      </div>
-    </form>
- 
-</div>
-
-        </div>
-      </div>
-    </div>
   </main>
 
   <!-- Rodapé -->

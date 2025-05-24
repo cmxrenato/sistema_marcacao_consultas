@@ -67,13 +67,14 @@ session_start();
             <div class="mb-3">
               <label for="confirma-senha" class="form-label">Confirme a senha</label>
               <div class="toggle1">
-              <input type="password" name="confirmesenha" id="confirma-senha" class="form-control" required placeholder="Confirme a senha">
+              <input type="password" name="confirma-senha" id="confirma-senha" class="form-control" required placeholder="Confirme a senha">
               <span class="toggle-password-btn" onclick="togglePassword(this, 'confirma-senha')">👁️‍🗨️</span>
                        
               </div>
               <p id="confirma-senha-helper" class="helper-text">Mensagem de ajuda</p>
             </div>             
             <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+            
           </form>
         </div>
       </div>

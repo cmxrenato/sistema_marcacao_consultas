@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
-  <script src="js/cadastro.js?v=1.0.5" defer></script>
+  <script src="js/cadastro.js?v=1.0.6" defer></script>
 </head>
 <body>
 
@@ -44,7 +44,7 @@ session_start();
       <div class="col-md-4">
         <div class="bg-light p-4 rounded shadow">
           <h3 class="text-center mb-4">Cadastro</h3>
-          <form action="tratamentocadastrocliente.php" method="POST" id="form-login">
+          <form action="tratamentocadastrocliente.php" method="POST" id="cadastro-form">
             <div class="mb-3">
               <label for="nome" class="form-label">Nome</label>
               <input type="text" name="nome" id="nome" class="form-control" required>
@@ -59,9 +59,10 @@ session_start();
               <label for="senha" class="form-label">Senha</label>
               <div class="toggle1">
               <input type="password" name="senha" id="senha" class="form-control" required placeholder="Crie uma senha">
-              <p id="senha-helper" class="helper-text">Mensagem de ajuda</p>
+              
               <span class="toggle-password-btn" onclick="togglePassword(this, 'senha')">👁️‍🗨️</span>
               </div>
+              <p id="senha-helper" class="helper-text">Mensagem de ajuda</p>
             </div>
             <div class="mb-3">
               <label for="confirma-senha" class="form-label">Confirme a senha</label>

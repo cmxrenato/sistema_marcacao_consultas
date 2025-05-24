@@ -7,12 +7,7 @@ let  usernameHelper = document.getElementById("username-helper")
 usernameInput.addEventListener("change",(e)=>{
     let valor = e.target.value.trim() //Captura o que foi escrito no input
     console.log(e.target)
-     if(valor == ""){
-        usernameInput.classList.remove('correct')
-        usernameInput.classList.remove('error')
-        usernameHelper.classList.remove('visible')
-        return;  // Evita seguir a próxima validação desnecessariamente
-    }
+     
 
     if (valor.length < 3){
         usernameInput.classList.remove('correct')
@@ -36,12 +31,7 @@ useremailInput.addEventListener("change", (e) => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (valor == "") {
-        useremailInput.classList.remove('correct');
-        useremailInput.classList.remove('error');
-        useremailHelper.classList.remove('visible');
-        return;
-    }
+    
 
     if (emailRegex.test(valor)) {
         useremailInput.classList.add('correct');
@@ -108,3 +98,19 @@ function togglePassword(btn, inputId) {
     }
 }
 
+// --------------- Tratamento em Js para permitir o envio do formulário para o backend------//
+
+let form = document.getElementById("cadastro-form"); 
+
+form.addEventListener("submit", (e) => {
+    let senhaValida = senhaInput.classList.contains('correct');
+    let confirmaSenhaValida = confirmaSenhaInput.classList.contains('correct');
+    let emailValido = useremailInput.classList.contains('correct');
+    let usernameValido = usernameInput.classList.contains('correct');
+
+    if (!senhaValida || !confirmaSenhaValida || !emailValido || !usernameValido) {
+        e.preventDefault(); 
+        alert("Por favor, corrija os erros antes de enviar."); 
+    }
+    // Aqui, nada mais! Se estiver válido, deixa enviar!
+});

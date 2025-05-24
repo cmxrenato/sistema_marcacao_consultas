@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             echo "<script>alert('Usuário cadastrado com sucesso!');
-                window.location.href = 'sistemacliente.php';
+                window.location.href = 'logincliente.php';
             </script>";
         } else {
             echo "Erro ao cadastrar usuário: " . $stmt->error;

@@ -55,10 +55,10 @@ session_start();
    
     
       <h3 class="text-center mb-4">Login do Cliente</h3>
-      <form action="tratamento_login_profissional.php" method="POST" id="form-login">
+      <form action="tratamentologincliente.php" method="POST" id="form-login">
         <div class="mb-3">
           <label for="login" class="form-label">Usuário</label>
-          <input type="text" name="login" id="login" class="form-control" required>
+          <input type="text" name="email" id="login" class="form-control" required>
         </div>
         <div class="mb-3">
           <label for="senha" class="form-label">Senha</label>

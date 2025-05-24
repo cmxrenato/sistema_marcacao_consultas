@@ -115,6 +115,8 @@ document.getElementById('btn-confirmar').addEventListener('click', function() {
 
 
 });
+
+
 function confirmarSaida() {
   return confirm("Tem certeza que deseja sair?");
 }

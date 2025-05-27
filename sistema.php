@@ -20,8 +20,8 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" href="css/sistema.css" />
+  <link href="css/style.css?v=<?= filemtime('css/style.css') ?>" rel="stylesheet" type="text/css">
+  <link href="css/sistema.css?v=<?= filemtime('css/sistema.css') ?>" rel="stylesheet" type="text/css">
   <script src="js/diasDisponiveis.js?v=1.0.7" defer></script>
 </head>
 <body>

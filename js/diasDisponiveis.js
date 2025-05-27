@@ -132,19 +132,20 @@ document.querySelectorAll('.btn-excluir').forEach(function(button) {
     button.addEventListener('click', function() {
         if (!confirm('Tem certeza que quer excluir?')) return;
 
-        var id = this.getAttribute('data-id');
-        var button = this;
+        const id = this.getAttribute('data-id');
+        const button = this;
 
         fetch('tratamentoBotaoExcluir.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: 'id=' + encodeURIComponent(id)
+            body: 'id=' + encodeURIComponent(id)// codifica o id para ser transmitido
         })
         .then(response => response.text())
         .then(data => {
             console.log(data);
             // Remove a linha da tabela
             button.closest('tr').remove();
+            //pega o ancestral tr mais próximo do botão e remove
         })
         .catch(error => {
             console.error('Erro:', error);

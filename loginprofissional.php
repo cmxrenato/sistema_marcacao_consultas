@@ -55,7 +55,7 @@ session_start();
    
     
       <h3 class="text-center mb-4">Login do Profissional</h3>
-      <form action="tratamento_login_profissional.php" method="POST" id="form-login">
+      <form action="tratamentologinprofissional.php" method="POST" id="form-login">
         <div class="mb-3">
           <label for="login" class="form-label">Usuário</label>
           <input type="text" name="login" id="login" class="form-control" required>

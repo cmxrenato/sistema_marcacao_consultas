@@ -94,7 +94,7 @@ document.getElementById('btn-confirmar').addEventListener('click', function() {
     return;
   }
    // Enviar para o backend com fetch
-  fetch('salvar_selecoes.php', {
+  fetch('salvarselecoes.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

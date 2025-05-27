@@ -5,6 +5,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: index.php");
     exit;
 }
+if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
+    header("Location: index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +49,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
       </div>
     </div>
   </nav>
-  <div class="submenu"><div id="nome"><p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p></div>
+  <div class="submenu"><div id="nome"><p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']);
+    ?>!</p></div>
 <div><a href="logout.php" class="btn btn-danger" onclick="return confirmarSaida()">🔒 Sair</a></div>
 
 
@@ -65,7 +70,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
   <div>
     <h2 id="agenda-label">Agenda disponível</h2>
-    <?php include 'listar_disponibilidades.php'; ?>
+    <?php include 'listardisponibilidade.php'; ?>
   </div>
 
 

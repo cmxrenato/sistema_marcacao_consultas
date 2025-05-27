@@ -105,8 +105,11 @@ document.getElementById('btn-confirmar').addEventListener('click', function() {
   //Bloco que recebe do PHP a resposta se tudo deu certo.
   .then(response => response.text())
   .then(data => {
+    
     alert("Disponibilidade salva com sucesso!");
+    
     console.log(data);
+    window.location.href = 'sistema.php?msg=sucesso';
   })
   .catch(error => {
     console.error("Erro ao salvar:", error);
@@ -120,3 +123,31 @@ document.getElementById('btn-confirmar').addEventListener('click', function() {
 function confirmarSaida() {
   return confirm("Tem certeza que deseja sair?");
 }
+
+
+// ---------- Excluir dias da agenda do médico ---//
+
+
+document.querySelectorAll('.btn-excluir').forEach(function(button) {
+    button.addEventListener('click', function() {
+        if (!confirm('Tem certeza que quer excluir?')) return;
+
+        var id = this.getAttribute('data-id');
+        var button = this;
+
+        fetch('tratamentoBotaoExcluir.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'id=' + encodeURIComponent(id)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            // Remove a linha da tabela
+            button.closest('tr').remove();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+    });
+});

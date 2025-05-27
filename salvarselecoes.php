@@ -37,8 +37,10 @@ foreach ($dados as $item) {
   $stmt->execute();
 }
 
+
 $stmt->close();
 $conexao->close();
-
+header('Content-Type: application/json');
 echo json_encode(["status" => "ok"]);
+exit;
 ?>

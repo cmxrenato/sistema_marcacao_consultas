@@ -22,7 +22,7 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css?v=<?= filemtime('css/style.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/sistema.css?v=<?= filemtime('css/sistema.css') ?>" rel="stylesheet" type="text/css">
-  <script src="js/diasDisponiveis.js?v=1.1.9" defer></script>
+  <script src="js/diasDisponiveis.js?v=1.4.9" defer></script>
 </head>
 <body>
 
@@ -61,17 +61,20 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
   <h2 class="mb-4">Escolha os dias e horários disponíveis</h2>
 
   <!-- Dias da semana -->
-  <div id="dias-semana">
-    <!-- Dias serão inseridos aqui via JS -->
-     
-  </div>
-   <div id="botao-div"><button class="btn btn-success" id="btn-confirmar">Confirmar Seleção</button></div>
+ <label for="data-selecionada">Selecione a data:</label>
+<input type="date" id="data-selecionada" class="form-control mb-3">
+
+<div id="horarios-container"></div>
+
+<button id="btn-confirmar" class="btn btn-success mt-3">Confirmar</button>
   
 
   <div>
     <h2 id="agenda-label">Agenda disponível</h2>
     <?php include 'listardisponibilidade.php'; ?>
   </div>
+
+  <button id="btn-excluirTudo" class="btn btn-danger mt-3 btn-excluirTudo">Excluir tudo</button>
 
 
 

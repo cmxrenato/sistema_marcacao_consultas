@@ -22,7 +22,7 @@ if ($conexao->connect_error) {
 }
 
 // Receber os dados
-$dados = json_decode(file_get_contents("php://input"), true);
+$dados= json_decode(file_get_contents("php://input"), true);
 
 if (!is_array($dados)) {
   http_response_code(400);
@@ -33,7 +33,7 @@ if (!is_array($dados)) {
 $stmt = $conexao->prepare("INSERT INTO selecoes_consultas (dia, horario, medico_id) VALUES (?, ?, ?)");
 
 foreach ($dados as $item) {
-  $stmt->bind_param("ssi", $item['dia'], $item['horario'], $medico_id);
+  $stmt->bind_param("ssi", $item['data'], $item['horario'], $medico_id);
   $stmt->execute();
 }
 

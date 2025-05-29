@@ -46,7 +46,7 @@ session_start();
           <h3 class="text-center mb-4">Cadastro</h3>
           <form action="tratamentocadastrocliente.php" method="POST" id="cadastro-form">
             <div class="mb-3">
-              <label for="nome" class="form-label">Nome</label>
+              <label for="nome" class="form-label">Nome completo</label>
               <input type="text" name="nome" id="nome" class="form-control" required>
               <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
             </div>

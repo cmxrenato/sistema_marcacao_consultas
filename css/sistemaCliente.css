@@ -1,0 +1,20 @@
+label{
+    font-weight: 600;
+}
+
+.agendar{
+    margin-top: 50px;
+}
+.caixa-form{
+    background-color: rgb(245, 245, 245);
+}
+
+#agenda-form{
+    padding: 30px;
+}
+.form-titulo{
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}

@@ -58,6 +58,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <p>Este é um exemplo de página para marcação de consultas.</p>
       </div>
       <div class="col-md-4 caixa-form">
+        <div class="bg-light p-4 rounded shadow">
          <form action="agenda.php" method="POST" id="agenda-form">
           
             <div class="mb-3">
@@ -77,7 +78,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
             <button type="submit" class="btn btn-success w-100 agendar">Agendar</button>
          </form>
-
+        </div>
       </div>
 
   </main>

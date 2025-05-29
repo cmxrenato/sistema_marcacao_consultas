@@ -56,19 +56,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
       <div class="col-md-8">
         <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?> !</h2>
         <p>Este é um exemplo de página para marcação de consultas.</p>
+
+        <h3>Consultas marcadas:</h3>
       </div>
+
+
       <div class="col-md-4 caixa-form">
         <div class="bg-light p-4 rounded shadow">
          <form action="agenda.php" method="POST" id="agenda-form">
           
             <div class="mb-3">
               <p  class="form-titulo">Agende sua consulta</p>
-              <input type="text" name="nome" id="nome" class="form-control" required placeholder="Telefone/WhatsApp">
+              <input type="text" name="telefone" id="telefone" class="form-control" required placeholder="Telefone/WhatsApp">
               
             </div>
                <div class="mb-3">
               
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" name="dia-horario">
                    <option selected>Selecione o dia e horário da consulta</option>
                    <option value="1">One</option>
                    <option value="2">Two</option>

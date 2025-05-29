@@ -3,7 +3,7 @@
 
 
 include 'conexao.php';
-session_start(); // se ainda não iniciou a sessão
+
 
 $medico_id = $_SESSION['medico_id'] ?? null;
 

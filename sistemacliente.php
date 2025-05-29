@@ -56,6 +56,37 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?> !</h2>
         <p>Este é um exemplo de página para marcação de consultas.</p>
       </div>
+      <div class="col-md-4">
+         <form action="agenda.php" method="POST" id="agenda-form">
+          <div class="mb-3">
+              <label for="nome" class="form-label">Nome completo</label>
+              <input type="text" name="nome" id="nome" class="form-control" required>
+              <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Email</label>
+              <input type="text" name="nome" id="nome" class="form-control" required>
+              <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Telefone/WhatsApp</label>
+              <input type="text" name="nome" id="nome" class="form-control" required>
+              <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
+            </div>
+               <div class="mb-3">
+              <label for="nome" class="form-label"></label>
+              <select class="form-select" aria-label="Default select example">
+                   <option selected>Selecione o dia e horário da consulta</option>
+                   <option value="1">One</option>
+                   <option value="2">Two</option>
+                   <option value="3">Three</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Agendar</button>
+         </form>
+
+      </div>
 
   </main>
 

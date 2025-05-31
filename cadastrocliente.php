@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
-  <script src="js/cadastro.js?v=1.0.6" defer></script>
+  <script src="js/cadastro.js?v=1.3.9" defer></script>
 </head>
 <body>
 
@@ -63,12 +63,11 @@ session_start();
               id="telefone"
               class="form-control"
               required
-              pattern="^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$"
-              maxlength="15"
-              placeholder="(99) 99999-9999"
+              
+              placeholder="Digite somente números"
   >
                <p  id="telefone-helper" class="helper-text">
-              Informe um telefone válido no formato (99) 99999-9999
+              Informe um telefone válido no formato 81999999999.
                 </p>
               </div> 
             <div class="mb-3">

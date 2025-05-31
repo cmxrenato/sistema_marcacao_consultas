@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'conexao.php'; // Inclui o arquivo de conexão com o banco de dados
 
     // Recebe os dados do formulário
-    $login = $_POST['email'];
+    $login = $_POST['telefone'];
     $senha = $_POST['senha'];
     $nome = $_POST['nome'];
     
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->num_rows > 0) {
         // Se já existe, exibe mensagem de erro
-        echo "<script>alert('Já existe um usuário cadastrado!');
+        echo "<script>alert('Não foi possível cadastrar o usuário. O login já existe');
         window.location.href = 'cadastrocliente.php';</script>";
     } else {
         // Caso contrário, insere o novo usuário

@@ -20,8 +20,41 @@ usernameInput.addEventListener("change",(e)=>{
         usernameHelper.classList.remove('visible')
     }
 })
-    //----------- Email ---------//
 
+
+// telefone
+
+let userfoneInput = document.getElementById("telefone");
+let userfoneLabel = document.querySelector('label[for="telefone"]');
+let userfoneHelper = document.getElementById('telefone-helper');
+
+// Bloqueia a digitação de caracteres não numéricos
+userfoneInput.addEventListener("input", (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '');
+});
+
+userfoneInput.addEventListener("change", (e) => {
+    let valor = e.target.value.trim();
+
+    // Regex para telefone brasileiro: 10 ou 11 dígitos
+    const telefoneRegex = /^\d{10,11}$/;
+
+    if (telefoneRegex.test(valor)) {
+        userfoneInput.classList.add('correct');
+        userfoneInput.classList.remove('error');
+        userfoneHelper.classList.remove('visible');
+    } else {
+        userfoneInput.classList.remove('correct');
+        userfoneInput.classList.add('error');
+        userfoneHelper.innerText = "Digite um telefone válido (ex: 81999999999)";
+        userfoneHelper.classList.add('visible');
+    }
+});
+
+
+
+    //----------- Email ---------//
+/*
 let useremailInput = document.getElementById("email")
 let useremailLabel = document.querySelector('label[for="email"]')
 let useremailHelper = document.getElementById('email-helper')
@@ -43,7 +76,7 @@ useremailInput.addEventListener("change", (e) => {
         useremailHelper.innerText = "Digite um e-mail válido (exemplo@dominio.com)";
         useremailHelper.classList.add('visible');
     }
-});
+});*/
 
 //---------- Senha ----------//
 let senhaInput = document.getElementById("senha");
@@ -105,10 +138,10 @@ let form = document.getElementById("cadastro-form");
 form.addEventListener("submit", (e) => {
     let senhaValida = senhaInput.classList.contains('correct');
     let confirmaSenhaValida = confirmaSenhaInput.classList.contains('correct');
-    let emailValido = useremailInput.classList.contains('correct');
+    let userfoneValido = userfoneInput.classList.contains('correct');
     let usernameValido = usernameInput.classList.contains('correct');
 
-    if (!senhaValida || !confirmaSenhaValida || !emailValido || !usernameValido) {
+    if (!senhaValida || !confirmaSenhaValida || !userfoneValido || !usernameValido) {
         e.preventDefault(); 
         alert("Por favor, corrija os erros antes de enviar."); 
     }

@@ -14,6 +14,7 @@ session_start();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
    <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
+   <script src="js/loginCliente.js?v=1.0.0" defer></script>
 </head>
 <body>
 
@@ -58,7 +59,7 @@ session_start();
       <form action="tratamentologincliente.php" method="POST" id="form-login">
         <div class="mb-3">
           <label for="login" class="form-label">Usuário</label>
-          <input type="text" name="email" id="login" class="form-control" required>
+          <input type="tel" name="telefone" id="telefone" class="form-control" required placeholder="Digite o telefone cadastrado">
         </div>
         <div class="mb-3">
           <label for="senha" class="form-label">Senha</label>

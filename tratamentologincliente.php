@@ -4,7 +4,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'conexao.php';
 
-    $login = $_POST['email'];
+    $login = $_POST['telefone'];
     $senha = $_POST['senha'];
 
     $sql = "SELECT id, senha, nome FROM clientes WHERE login = ?";
@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: sistemacliente.php");
             exit;
         } else {
-            echo "<script>alert('Senha ou Usuário incorretos!'); window.location.href='index.php';</script>";
+            echo "<script>alert('Senha ou Usuário incorretos!'); window.location.href='logincliente.php';</script>";
             exit;
         }
     } else {
-        echo "<script>alert('Senha ou Usuário incorretos!'); window.location.href='index.php';</script>";
+        echo "<script>alert('Senha ou Usuário incorretos!'); window.location.href='logincliente.php';</script>";
         exit;
     }
 

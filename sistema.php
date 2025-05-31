@@ -69,7 +69,7 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
 <button id="btn-confirmar" class="btn btn-success mt-3">Confirmar</button>
   
 
-  <div>
+  <div class="mt-5">
     <h2 id="agenda-label">Agenda disponível</h2>
     <?php include 'listardisponibilidade.php'; ?>
   </div>

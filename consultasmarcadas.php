@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 
     echo "</table>";
 } else {
-    echo "<div class='senao'>Não há mais datas disponíveis! Volte mais tarde!</div>";
+    echo "<div class='senao'>Não há consultas marcadas!</div>";
 }
 
 $stmt->close();

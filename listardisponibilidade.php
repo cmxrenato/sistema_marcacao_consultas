@@ -40,7 +40,8 @@ if ($result->num_rows > 0) {
 
     echo "</table>";
 } else {
-    echo "Nenhum registro encontrado.";
+    echo "<div class='senao'>Nenhum registro encontrado.</div>";
+    echo "<div class='senao'>Você pode adicionar novos horários acima.</div>";
 }
 
 $stmt->close();

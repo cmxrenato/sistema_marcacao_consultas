@@ -19,7 +19,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css?v=<?= filemtime('css/style.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/sistemaCliente.css?v=<?= filemtime('css/sistemaCliente.css') ?>" rel="stylesheet" type="text/css">
-  <script src="js/confirmarSaida.js?v=1.0.11" defer></script>
+  <script src="js/confirmarSaida.js?v=1.1.17" defer></script>
 </head>
 <body>
 

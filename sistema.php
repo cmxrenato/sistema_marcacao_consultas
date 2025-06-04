@@ -49,7 +49,7 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
       </div>
     </div>
   </nav>
-  <div class="submenu"><div id="nome"><p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']);
+  <div class="submenu"><div id="nome"><p>Bem-vindo, Dr.  <?php echo htmlspecialchars($_SESSION['nome']);
     ?>!</p></div>
 <div><a href="logout.php" class="btn btn-danger" onclick="return confirmarSaida()">🔒 Sair</a></div>
 

@@ -30,4 +30,13 @@ label{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}*/
+*/
+    .botaoCentralizar{
+        text-align:end ;
+           }
+           .btn-marcar, .btn-excluir {
+    width: 80px;
+    display: block;        /* Permite margin:auto funcionar */
+    margin: 0 auto;        /* Centraliza horizontalmente */
+    padding: 8px 0;        /* Ajuste vertical interno */
+}  

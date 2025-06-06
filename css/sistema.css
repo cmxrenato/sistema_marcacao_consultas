@@ -20,6 +20,8 @@ main{
 
 #agenda-label{
     margin-bottom: 20px;
+    text-align: center;
+
 }
 .submenu{
     
@@ -47,4 +49,16 @@ label{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.botaoExcluirDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+   
+}
+#btn-excluirTudo{
+     width: 200px;
+     height: 50px;
+
 }

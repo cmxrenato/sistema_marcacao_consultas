@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th>Dia</th>
                 <th>Horário</th>
-                <th>Excluir</th>
+                <th> Excluir</th>
             </tr>";
 
     while($row = $result->fetch_assoc()) {

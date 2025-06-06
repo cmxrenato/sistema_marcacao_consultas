@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th>Dia</th>
                 <th>Horário</th>
-                <th>Marcar</th>
+                <th class='thCentralizar'>Marcar</th>
             </tr>";
 
     while($row = $result->fetch_assoc()) {

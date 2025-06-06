@@ -72,7 +72,7 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
   <div class="mt-5">
     <h2 id="agenda-label">Agenda disponível</h2>
     <?php include 'listardisponibilidade.php'; ?>
- <div class="botaoExcluirDiv"> 
+     <div class="botaoExcluirDiv"> 
   <button id="btn-excluirTudo" class="btn btn-danger mt-3 btn-excluirTudo">Excluir tudo</button>
     </div>
     <h2 id="agenda-label">Pacientes agendados:</h2>

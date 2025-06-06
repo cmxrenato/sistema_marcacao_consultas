@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th>Dia</th>
                 <th>Horário</th>
-                <th>Desmarcar</th>
+                <th class='thCentralizar'>Desmarcar</th>
 
                                                
             </tr>";

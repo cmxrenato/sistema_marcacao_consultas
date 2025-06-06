@@ -40,3 +40,6 @@ label{
     margin: 0 auto;        /* Centraliza horizontalmente */
     padding: 8px 0;        /* Ajuste vertical interno */
 }  
+.thCentralizar{
+    text-align: center;
+}

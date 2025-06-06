@@ -58,11 +58,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <p>Este é um exemplo de página para marcação de consultas.</p>
         
         
-        <h3>Datas disponíveis:</h3>
+        <h3>Datas disponíveis</h3>
          <?php include 'listaragenda.php'; ?>
         
         
-        <h3>Consultas marcadas:</h3>
+        <h3>Consultas marcadas</h3>
         <?php include 'consultasmarcadas.php'; ?>
         
     </div>

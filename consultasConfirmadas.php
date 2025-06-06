@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
 
     echo "</table>";
 } else {
-    echo "<div class='senao'>Não há consultas marcadas!</div>";
+    echo "<div class='senao'>Não há pacientes marcados! </div>";
 }
 
 $stmt->close();

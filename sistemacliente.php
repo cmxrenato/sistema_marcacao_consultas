@@ -32,17 +32,15 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   <!-- Navegação -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-      <a class="navbar-brand" href="#">Logomarca</a>
+      <a class="navbar-brand" href="logout.php">Logomarca</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
-          <li class="nav-item"><a class="nav-link" href="loginprofissional.php">Login para profissionais</a></li>
-          <li class="nav-item"><a class="nav-link" href="logincliente.php">Login para Clientes</a></li>
+          
+        
+          
           <li class="nav-item"><a href="logout.php" class="btn btn-danger" onclick="return confirmarSaida()">🔒 Sair</a></li>
           
         </ul>
@@ -57,14 +55,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?> !</h2>
         <p>Este é um exemplo de página para marcação de consultas.</p>
         
+
+        <h3>Consultas marcadas</h3>
+        <?php include 'consultasmarcadas.php'; ?>
+
         
         <h3>Datas disponíveis</h3>
          <?php include 'listaragenda.php'; ?>
         
         
-        <h3>Consultas marcadas</h3>
-        <?php include 'consultasmarcadas.php'; ?>
-        
+               
     </div>
       
 

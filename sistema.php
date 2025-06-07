@@ -35,18 +35,16 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
   <!-- Navegação -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-      <a class="navbar-brand" href="#">Logomarca</a>
+      <a class="navbar-brand" href="logout.php">Logomarca</a>
+	  <!--
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.php">Login para profissionais</a></li>
+          <li class="nav-item"><a href="logout.php" class="btn btn-danger" onclick="return confirmarSaida()">🔒 Sair</a></li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </nav>
   <div class="submenu"><div id="nome"><p>Bem-vindo, Dr.  <?php echo htmlspecialchars($_SESSION['nome']);
@@ -70,13 +68,15 @@ if (!isset($_SESSION['medico_id']) || $_SESSION['loggedin'] !== true) {
   
 
   <div class="mt-5">
-    <h2 id="agenda-label">Agenda disponível</h2>
+ <h2 id="agenda-label">Pacientes agendados</h2>
+    <?php include 'consultasConfirmadas.php'; ?>
+
+<h2 id="agenda-label">Agenda disponível</h2>
     <?php include 'listardisponibilidade.php'; ?>
-     <div class="botaoExcluirDiv"> 
+<div class="botaoExcluirDiv"> 
   <button id="btn-excluirTudo" class="btn btn-danger mt-3 btn-excluirTudo">Excluir tudo</button>
     </div>
-    <h2 id="agenda-label">Pacientes agendados</h2>
-    <?php include 'consultasConfirmadas.php'; ?>
+
   </div>
 
 

@@ -53,15 +53,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="linha" >
         
         <h2>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?> !</h2>
-        <p>Este é um exemplo de página para marcação de consultas.</p>
         
-
-        <h3>Consultas marcadas</h3>
-        <?php include 'consultasmarcadas.php'; ?>
+        
+	
+        
+        <?php include 'dinamicoCliente.php'; ?>
 
         
-        <h3>Datas disponíveis</h3>
-         <?php include 'listaragenda.php'; ?>
+       
         
         
                

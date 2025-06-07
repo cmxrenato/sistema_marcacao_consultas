@@ -25,12 +25,10 @@ label{
     font-weight: bold;
     font-size: x-large;
 }
-/*.senao{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-*/
+.senao{
+	color: red;
+}
+
     .botaoCentralizar{
         text-align:end ;
            }
@@ -42,4 +40,8 @@ label{
 }  
 .thCentralizar{
     text-align: center;
+}
+
+#sucesso{
+	color: green;
 }

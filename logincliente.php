@@ -28,7 +28,7 @@ session_start();
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
       <a class="navbar-brand" href="index.php">Logomarca</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+    <!--  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menuNav">
@@ -38,6 +38,7 @@ session_start();
           
         </ul>
       </div>
+	  -->
     </div>
   </nav>
 

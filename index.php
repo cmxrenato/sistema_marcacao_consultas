@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto">
          
-          <li class="nav-item"><a class="nav-link" href="loginprofissional.php">Login para profissionais</a></li>
+          <li class="nav-item"><a class="nav-link" href="loginprofissional.php">Login para Profissionais</a></li>
           <li class="nav-item"><a class="nav-link" href="logincliente.php">Login para Clientes</a></li>
         </ul>
       </div>

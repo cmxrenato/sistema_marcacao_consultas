@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST['telefone'];
     $senha = $_POST['senha'];
     $nome = $_POST['nome'];
+    $email = $_POST['email'];
     
 
     // Hash da senha para armazenamento seguro
@@ -32,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         window.location.href = 'cadastrocliente.php';</script>";
     } else {
         // Caso contrário, insere o novo usuário
-        $sql = "INSERT INTO clientes (login, senha, nome) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO clientes (login, senha, nome, email) VALUES (?, ?, ?, ?)";
         $stmt = $conexao->prepare($sql);
 
         if ($stmt === false) {
             die("Erro na preparação da consulta de inserção: " . $conexao->error);
         }
 
-        $stmt->bind_param("sss", $login, $senha_hash, $nome);
+        $stmt->bind_param("ssss", $login, $senha_hash, $nome, $email);
 
         if ($stmt->execute()) {
             echo "<script>alert('Usuário cadastrado com sucesso!');

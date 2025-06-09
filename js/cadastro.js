@@ -140,8 +140,9 @@ form.addEventListener("submit", (e) => {
     let confirmaSenhaValida = confirmaSenhaInput.classList.contains('correct');
     let userfoneValido = userfoneInput.classList.contains('correct');
     let usernameValido = usernameInput.classList.contains('correct');
+    let userEmailValido = useremailInput.classList.contains('correct');
 
-    if (!senhaValida || !confirmaSenhaValida || !userfoneValido || !usernameValido) {
+    if (!senhaValida || !confirmaSenhaValida || !userfoneValido || !usernameValido || !userEmailValido) {
         e.preventDefault();
         alert("Por favor, corrija os erros antes de enviar.");
     }

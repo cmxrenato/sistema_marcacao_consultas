@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
   <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
-  <script src="js/cadastro.js?v=1.3.9" defer></script>
+  <script src="js/cadastro.js?v=1.3.10" defer></script>
 </head>
 <body>
 
@@ -70,6 +70,12 @@ session_start();
               Informe um telefone válido no formato 81999999999.
                 </p>
               </div> 
+             <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="email" id="email" class="form-control" required>
+              <p id="email-helper" class="helper-text">Mensagem de ajuda</p>
+            </div>
+                            
             <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
               <div class="toggle1">

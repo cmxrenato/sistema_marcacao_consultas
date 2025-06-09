@@ -23,16 +23,13 @@ session_start();
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-      <a class="navbar-brand" href="#">Logomarca</a>
+      <a class="navbar-brand" href="index.php">Logomarca</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.php">Login para profissionais</a></li>
+          <li class="nav-item"><a class="nav-link" href="loginprofissional.php">Login para Profissionais</a></li>
           <li class="nav-item"><a class="nav-link" href="logincliente.php">Login para Clientes</a></li>
         </ul>
       </div>

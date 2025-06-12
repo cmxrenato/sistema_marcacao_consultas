@@ -16,10 +16,10 @@ if (!isset($_SESSION['login_validado'])) {
     <title>Cadastro de Clientes</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="css/style.css?v=<? filemtime('css/style.css') ?>" rel="stylesheet" type="text/css">
     <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
     <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
-    <script src="js/cadastro.js?v=1.3.10" defer></script>
+    <script src="js/cadastroNovaSenha.js?v=1.0.0" defer></script>
 </head>
 
 <body>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['login_validado'])) {
                     <form action="salvarNovaSenha.php" method="POST" id="cadastro-form">
 
                         <div class="mb-3">
-                            <label for="senha" class="form-label">Senha</label>
+                            <label for="senha" class="form-label">Nova Senha</label>
                             <div class="toggle1">
                                 <input type="password" name="senha" id="senha" class="form-control" required placeholder="Crie uma senha">
 

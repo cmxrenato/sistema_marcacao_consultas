@@ -1,11 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['login_validado'])) {
-    header("Location: redefinirSenha.php");
-    exit;
-}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,13 +8,15 @@ if (!isset($_SESSION['login_validado'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro de Clientes</title>
+    <title>Redefinir Senha</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css?v=<? filemtime('css/style.css') ?>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="css/login.css?v=<?= filemtime('css/login.css') ?>" rel="stylesheet" type="text/css">
     <link href="css/redefinirsenha.css?v=<?= filemtime('css/redefinirsenha.css') ?>" rel="stylesheet" type="text/css">
-    <script src="js/cadastroNovaSenha.js?v=1.0.0" defer></script>
+    <!--<script src="js/cadastro.js?v=2.0.2" defer></script>-->
+    <script src="js/checagemPro.js?v=1.0.3" defer></script>
+
 </head>
 
 <body>
@@ -47,28 +44,35 @@ if (!isset($_SESSION['login_validado'])) {
         <div class="row">
             <div class="col-md-4">
                 <div class="bg-light p-4 rounded shadow">
-                    <h3 class="text-center mb-4">Cadastro</h3>
-                    <form action="salvarNovaSenha.php" method="POST" id="cadastro-form">
-
+                    <h3 class="text-center mb-4">Verificar usuário</h3>
+                    <form action="verificarUsuario.php" method="POST" id="cadastro-form">
                         <div class="mb-3">
-                            <label for="senha" class="form-label">Nova Senha</label>
-                            <div class="toggle1">
-                                <input type="password" name="senha" id="senha" class="form-control" required placeholder="Crie uma senha">
-
-                                <span class="toggle-password-btn" onclick="togglePassword(this, 'senha')">👁️‍🗨️</span>
-                            </div>
-                            <p id="senha-helper" class="helper-text">Mensagem de ajuda</p>
+                            <label for="nome" class="form-label">Nome completo</label>
+                            <input type="text" name="nome" id="nome" class="form-control" required>
+                            <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
                         </div>
                         <div class="mb-3">
-                            <label for="confirma-senha" class="form-label">Confirme a senha</label>
-                            <div class="toggle1">
-                                <input type="password" name="confirma-senha" id="confirma-senha" class="form-control" required placeholder="Confirme a senha">
-                                <span class="toggle-password-btn" onclick="togglePassword(this, 'confirma-senha')">👁️‍🗨️</span>
+                            <label for="cpf" class="form-label">
+                                CPF
+                                
+                            </label>
+                            <input
+                                type="text"
+                                name="cpf"
+                                id="cpf"
+                                class="form-control"
+                                required
 
-                            </div>
-                            <p id="confirma-senha-helper" class="helper-text">Mensagem de ajuda</p>
+                                placeholder="Digite somente números">
+                            <p id="cpf-helper" class="helper-text">
+                                Informe um cpf válido no formato 00000000000.
+                            </p>
                         </div>
-                        <button type="submit" class="btn btn-success w-100">Enviar</button>
+                        
+
+
+
+                        <button type="submit" class="btn btn-success w-100">Verificar</button>
 
                     </form>
                 </div>

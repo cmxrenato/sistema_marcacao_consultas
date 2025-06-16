@@ -52,7 +52,6 @@ userfoneInput.addEventListener("change", (e) => {
 });
 
 
-
 //----------- Email ---------//
 
 let useremailInput = document.getElementById("email")

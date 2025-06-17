@@ -1,5 +1,5 @@
 // ----------Nome ----------//
-
+/*
 let usernameInput = document.getElementById("nome")
 let usernameLabel = document.querySelector('label[for="nome"]')
 let usernameHelper = document.getElementById("username-helper")
@@ -20,7 +20,7 @@ usernameInput.addEventListener("change", (e) => {
         usernameHelper.classList.remove('visible')
     }
 })
-
+*/
 
 
 
@@ -35,7 +35,7 @@ cpfInput.addEventListener("input", (e) => {
     e.target.value = e.target.value.replace(/\D/g, '');
 });
 
-cpfInput.addEventListener("change", (e) => {
+cpfInput.addEventListener("input", (e) => {
     let valor = e.target.value.trim();
 
     // Regex para cpf brasileiro: 11 dígitos.
@@ -59,10 +59,10 @@ let form = document.getElementById("cadastro-form");
 
 form.addEventListener("submit", (e) => {
     
-    let usernameValido = usernameInput.classList.contains('correct');
-    let cpfValido = cpfInput.classList.contains('correct');
+   //let usernameValido = usernameInput.classList.contains('correct');
+    const cpfValido = cpfInput.classList.contains('correct');
 
-    if (!cpfInput || !usernameValido) {
+    if (!cpfValido) {
         e.preventDefault();
         alert("Por favor, corrija os erros antes de enviar.");
     }
